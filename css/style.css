@@ -1,0 +1,207 @@
+.noselect {
+	cursor: default;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.navbar-brand,
+.navbar-nav li a {
+	line-height: 70px;
+	height: 70px;
+	padding-top: 0;
+}
+.navbar{
+	margin-bottom: 0px;
+}
+#intro{
+	position:relative;
+	margin: 0px;
+	padding: 0px;
+	margin-top: 71px;
+}
+#intro>div>div{
+	padding: 0px;
+}
+.overlay{
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 10;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+    filter: alpha(opacity=75);
+    opacity: 0.2;
+}
+.tipinfo{
+	position: absolute;
+	bottom:40px;
+	left:0px;
+	right:0px;
+/*	width:50%;
+	max-width: 600px;
+	min-width: 100px;
+	overflow: hidden;*/
+	background: #fff;
+	background: rgba(0,0,0,0.5);
+	opacity: 1;
+	padding:20px;
+	z-index: 20;
+	margin:0px !important;
+  }
+.tipinfo div{
+	position: relative;
+	text-align: center;
+	color:#fff;
+}  
+.tipinfo>.location:after,.tipinfo>.phone:after{
+  	background-color: #d91d1d;
+    content: "";
+    height: 35px;
+    right: -10px;
+    position: absolute;
+    top: -8px;
+    width: 1px;
+  }
+.ourvission{
+	margin:0px 0px;
+	padding: 200px 5px;
+}
+.ourvission-text{
+	line-height: 47px;
+	background: rgba(0,0,0,0.5);
+	color:#fff;
+	font-weight: bold;
+	text-align: right;
+}
+.delivary-text{
+	line-height: 47px;
+	background: rgba(0,0,0,0.7);
+	color:#fff;
+	font-weight: bold;
+	text-align: center;	
+	font-size:30px;
+}
+.foodslider{
+	margin: 0px;padding:0px;
+}
+.flexiselimg{
+	position: relative;
+}
+.flexiselcost{
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+.ss-style-top::before {
+	left: 0;
+	width: 100%;
+	height: 30px;
+	background-size: 25px 100%;
+	top: 0;
+	background-image: linear-gradient(315deg, #FFF 50%, transparent 50%), 
+					  linear-gradient(45deg, #FFF 50%, transparent 50%);
+	margin-top: -30px;
+	z-index: 100;
+}
+
+.ss-style-bottom::before {
+	left: 0;
+	width: 100%;
+	height: 30px;
+	background-size: 25px 100%;
+	top: 0;
+	background-image: linear-gradient(583deg, #FFF 50%, transparent 50%), 
+					  linear-gradient(136deg, #FFF 50%, transparent 50%);
+	margin-top: 0px;
+	z-index: 100;
+}
+.all4kinds .kind{
+	text-align: right;
+}
+.all4kinds .img{
+	width:100%;
+	height:210px;
+}
+.all4kinds {
+	text-align:center;
+}
+.carousel-inner img{
+	max-height: 500px;
+	width:100%;
+}
+ul.nav>li{
+	float:right;
+}
+.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11,
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11,
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11,
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11{
+	float:right;
+}
+.parallax-window {
+	min-height: 500px;
+	background: transparent;
+}
+.ordernow{
+	text-align: center;
+	margin:10px;
+}
+.ordernow>button{
+padding:7px 20px;
+}
+
+.nav li{
+    -webkit-transition: background 2s; /* Safari 3.1 to 6.0 */
+    transition: background 1s;
+}
+.nav li:hover{
+	background:#c00;
+}
+.navbar-nav li>a:focus,
+.navbar-nav li.active,
+.navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.open>a {
+    background-color:#c00;
+    background-image:none !important;
+}
+/*
+.nav li:hover,
+.navbar-nav li>a:focus,
+.navbar-nav li.active,
+.navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.open>a {
+	-webkit-box-shadow: inset 0px 0px 28px -2px rgba(0,0,0,0.72);
+	-moz-box-shadow: inset 0px 0px 28px -2px rgba(0,0,0,0.72);
+	box-shadow: inset 0px 0px 28px -2px rgba(0,0,0,0.72);
+}
+*/
+footer{
+	background: #ccc;
+	padding:7px;
+	border-top:solid 1px #bbb;
+}
+#contactus *{
+	text-align: right;
+	direction:rtl;
+}
+.input-group-addon:first-child{
+}
+
+.input-group-addon:first-child{
+	border-top-right-radius: 4px; 
+    border-bottom-right-radius: 4px;
+    border-right:1px solid #ccc;
+}
+textarea{
+	resize:vertical; max-height:300px; min-height:200px;
+}
+#success_message{
+	visibility: visible;
+}

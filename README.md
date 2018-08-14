@@ -1,2 +1,3 @@
 # Tareq-Restaurant
-A university project
+
+A website for a Restaurant in hebron.

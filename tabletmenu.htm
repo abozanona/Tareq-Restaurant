@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name = "viewport" content = "user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+	
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.min.js"></script>
+		<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+<style type="text/css">
+.food-item{
+	position:relative;
+	background: #ccc;
+	margin:0px 0px 10px 0px;
+	height:150px;
+}
+.food-details{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: rgba(255,255,255,0);
+	height:120px;
+	width:120px;
+	border:solid 4px #fff;
+	-moz-border-radius-topleft: 60px;
+	-moz-border-radius-topright:60px;
+	-moz-border-radius-bottomleft:60px;
+	-moz-border-radius-bottomright:60px;
+	-webkit-border-top-left-radius:60px;
+	-webkit-border-top-right-radius:60px;
+	-webkit-border-bottom-left-radius:60px;
+	-webkit-border-bottom-right-radius:60px;
+	border-top-left-radius:60px;
+	border-top-right-radius:60px;
+	border-bottom-left-radius:60px;
+	border-bottom-right-radius:60px;
+    text-align: center;
+    direction: rtl;
+    display: table;
+}
+.food-table{
+	display: table-cell; 
+	vertical-align: middle; 
+	text-align: center; 
+}
+.food-count{
+	visibility: hidden;
+	position:absolute;
+	right:0px;
+	top:0px;
+	width:40px;
+	height:40px;
+	background: rgba(0,0,0,0.7);
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	line-height: 40px;
+	text-align:center;
+	color:#fff;
+}
+.food-takenote{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	background: #c33;
+	height:40px;
+	width:40px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+}
+.food-takenote-input{
+	position:absolute;
+	right:52px;
+	bottom:4px;
+}
+.ui-input-text input, .ui-input-search input{
+	text-align:right;
+}
+.food-takenote-input-0-width{
+	width:0px;
+}
+.food-ordercolor{
+	position:absolute;
+	left:0px;
+	top:0px;
+	right:0px;
+	bottom:0px;
+}
+.tableno-text{
+	vertical-align:middle;
+	line-height:56px;"
+	text-align: right;
+}
+</style>
+<body>
+<div class="container">
+	<div class="col-xs-2 tableno-text">
+		<span>رقم الطاولة</span>
+	</div>
+	<div class="col-xs-2">
+		<input type="number" min=1 max=99 value="1" />
+	</div>
+	<div class="col-xs-2 tableno-text">
+		<button type="button">أكد الطلب</button>
+	</div>
+</div>
+<div class="container food-list">
+	<div class="row food-item"  style="background:url('img/01.png')">
+		<div class="food-ordercolor">
+		</div>
+		<div class="food-details noselect">
+			<div class="food-count">
+				0
+			</div>
+			<div class="food-table">
+				<div class="food-name">
+					dd
+				</div>
+				<div class="food-price">
+					<span class="food-price-no">5</span>₪
+				</div>
+			</div>
+		</div>
+		<div class="food-takenote">
+		</div>
+		<div class="food-takenote-input food-takenote-input-0-width">
+			<input type="text" placeholder="أدخل الملاحظات" />
+		</div>
+	</div>
+	<div class="row food-item"  style="background:url('img/01.png')">
+		<div class="food-ordercolor">
+		</div>
+		<div class="food-details noselect">
+			<div class="food-count">
+				0
+			</div>
+			<div class="food-table">
+				<div class="food-name">
+					dd
+				</div>
+				<div class="food-price">
+					<span class="food-price-no">5</span>₪
+				</div>
+			</div>
+		</div>
+		<div class="food-takenote">
+		</div>
+		<div class="food-takenote-input food-takenote-input-0-width">
+			<input type="text" placeholder="أدخل الملاحظات" />
+		</div>
+	</div>
+	<div class="row food-item"  style="background:url('img/01.png')">
+		<div class="food-ordercolor">
+		</div>
+		<div class="food-details noselect">
+			<div class="food-count">
+				0
+			</div>
+			<div class="food-table">
+				<div class="food-name">
+					dd
+				</div>
+				<div class="food-price">
+					<span class="food-price-no">5</span>₪
+				</div>
+			</div>
+		</div>
+		<div class="food-takenote">
+		</div>
+		<div class="food-takenote-input food-takenote-input-0-width">
+			<input type="text" placeholder="أدخل الملاحظات" />
+		</div>
+	</div>
+</div>
+<script>
+	function add(x){
+		var ss=parseInt(x.find(".food-count").text());
+		x.find(".food-count").css('visibility', 'visible'); 
+		x.find(".food-count").html(ss+1);
+		x.find(".food-details").css('background-color', "rgba(255,255,255,0.7)");
+		x.find(".food-ordercolor").animate({backgroundColor: "rgba( 100, 255, 100, 0.8 )"},200);
+		x.find(".food-ordercolor").animate({backgroundColor: "rgba( 100, 255, 100, 0 )"},"slow");
+	}
+	function remove(x){
+		var ss=parseInt(x.find(".food-count").text());
+		if(ss==0)
+			return;
+		x.find(".food-count").html(ss-1);
+		if(ss==1)
+		{
+			x.find(".food-details").css('background-color', "rgba(255,255,255,0)");
+			x.find(".food-count").css('visibility', 'hidden')
+		}
+		x.find(".food-ordercolor").animate({backgroundColor: "rgba( 255, 100, 100, 0.8 )"},200);
+		x.find(".food-ordercolor").animate({backgroundColor: "rgba( 255, 100, 100, 0 )"},"slow");
+	}
+	function note(){
+		;
+	}
+
+	$(document).on("ready",function(){
+		$(".food-item").on("swiperight",function(){
+			add($(this));
+		});                       
+		$(".food-item").on("swipeleft",function(){
+			remove($(this));
+		});
+	});
+    $(".food-takenote").click(function(){
+        $(this).parent().find(".food-takenote-input").toggleClass("food-takenote-input-0-width");
+    });
+</script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name = "viewport" content = "user-scalable=no, width=device-width">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+	
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/parallax.min.js"></script>
+	<!--[if lt IE 9]>
+		<script src="js/html5shiv.min.js"></script>
+		<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<style>
+		.foodkind{
+			margin-bottom:20px;
+		}
+		.foodkind>.row{
+			margin:0px 5px;
+			border:solid 3px #ccc;
+			border: solid 1px rgba(0, 0, 0, 0.28);
+		}
+		.top-pic{
+			background: #cb0;
+			height:100px;
+			position:relative;
+			border-bottom: solid 4px #c33;
+		}
+		.top-pic-price{
+			position:absolute;
+			right:10px;
+			top:10px;
+			background: #e33;
+			text-align: center;
+			padding:5px;
+			font-weight: bold;
+			color:#fff;
+		}
+		.top-pic-quantity{
+			position:absolute;
+			left:10px;
+			top:10px;
+			background: #6e6;
+			padding:0px 16px;
+			content:" ";
+			font-size: 20px;
+			-webkit-border-radius: 16px;
+			-moz-border-radius: 16px;
+			border-radius: 16px;
+			text-align: center;
+		}
+		.bottom-buttons{
+			border-top: solid 1px #aaa;
+		}
+		.bottom-buttons .btn{
+			font-weight: bold;
+			font-size:16px;
+		}
+		.bottom-buttons>div>div{
+			padding:8px;
+			font-size: 20px;
+			text-align: center;
+		}
+		.bottom-buttons input{
+			width: 126px;
+			text-align: right;
+			padding:0px 4px;
+			direction: rtl;
+		}
+		.lightbox-show,.top-pic-quantity,.minus{
+			visibility:hidden;
+		}
+		.middle-txt{
+			text-align: center;
+			direction: rtl;
+		}
+		.middle-txt h4.foodname{
+			border-bottom: solid 1px #ccc;
+			padding-bottom: 4px
+		}
+		.note-lightbox{
+			position:absolute;
+			right:0px;
+			left:0px;
+			top:0px;
+			bottom:0px;
+			background: rgba(0,0,0,0.5);
+			z-index: 20;
+			text-align: center;
+			visibility: hidden;
+		}
+		.foodkind>.row{
+			position: relative;
+		}
+		.notes{
+		    resize: none;
+	    	min-height: 135px;
+	    	text-align: right;
+	    	direction: rtl;
+		}
+		.order-header{
+			height:200px;
+			max-height:200px;
+			background: url("img/01.png");
+			margin:0px 0px 20px 0px;
+		}
+		.order-header>div{
+			padding: 0px;
+			margin-right: 0px;
+			margin-left: 0px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<div class="row order-header">
+	<div class="col-sm-12 order-header">
+		<h1>???????????????????</h1>
+		<h3>???????????????????</h3>
+		<button class="btn btn-danger">حدد طلبك ثم انقر هنا لتأكيد الطلب.</button>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="clearfix"></div>
+		<div class="foodkind col-md-4 col-sm-3 col-xs-12">
+			<div class="row">
+				<div class="note-lightbox">
+					<div class="note-lightbox-input">
+						<textarea cols="40" class="notes" type="text" placeholder="أدخل ملاحظاتك. مثال(بدول ملح)" onchange="changenotes(this)" onkeyup="changenotes(this)"></textarea>
+					</div>
+					<div>
+						<button class="btn" onclick="hidelightbox(this)">موافق</button>
+					</div>
+				</div>
+				<div class="top-pic col-sm-12">
+					<div class="top-pic-price">
+						15₪
+					</div>
+					<div class="top-pic-quantity">0</div>
+				</div>
+				<div class="middle-txt col-sm-12">
+					<h4 class="foodname"><b>أرز</b></h4>
+					<h4 class="small"><i><span class="notes-text"></span></i></h4>
+				</div>
+				<div class="bottom-buttons col-sm-12">
+					<div class="row">
+						<div class="col-sm-4">
+							<button class="btn plus" onclick="plus(this)">+</button>
+						</div>
+						<div class="col-sm-4">
+							<button class="btn lightbox-show" onclick="showlightbox(this)">ملاحظات</button>
+						</div>
+						<div class="col-sm-4">
+							<button class="btn minus" onclick="minus(this)">-</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="foodkind col-md-4 col-sm-3 col-xs-12">
+			<div class="row">
+				<div class="note-lightbox">
+					<div class="note-lightbox-input">
+						<textarea cols="40" class="notes" type="text" placeholder="أدخل ملاحظاتك. مثال(بدول ملح)" onchange="changenotes(this)" onkeyup="changenotes(this)"></textarea>
+					</div>
+					<div>
+						<button class="btn" onclick="hidelightbox(this)">موافق</button>
+					</div>
+				</div>
+				<div class="top-pic col-sm-12">
+					<div class="top-pic-price">
+						15₪
+					</div>
+					<div class="top-pic-quantity">0</div>
+				</div>
+				<div class="middle-txt col-sm-12">
+					<h4 class="foodname"><b>أرز</b></h4>
+					<h4 class="small"><i><span class="notes-text"></span></i></h4>
+				</div>
+				<div class="bottom-buttons col-sm-12">
+					<div class="row">
+						<div class="col-sm-4">
+							<button class="btn plus" onclick="plus(this)">+</button>
+						</div>
+						<div class="col-sm-4">
+							<button class="btn lightbox-show" onclick="showlightbox(this)">ملاحظات</button>
+						</div>
+						<div class="col-sm-4">
+							<button class="btn minus" onclick="minus(this)">-</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="foodkind col-md-4 col-sm-3 col-xs-12">
+			<div class="row">
+				<div class="note-lightbox">
+					<div class="note-lightbox-input">
+						<textarea cols="40" class="notes" type="text" placeholder="أدخل ملاحظاتك. مثال(بدول ملح)" onchange="changenotes(this)" onkeyup="changenotes(this)"></textarea>
+					</div>
+					<div>
+						<button class="btn" onclick="hidelightbox(this)">موافق</button>
+					</div>
+				</div>
+				<div class="top-pic col-sm-12">
+					<div class="top-pic-price">
+						15₪
+					</div>
+					<div class="top-pic-quantity">0</div>
+				</div>
+				<div class="middle-txt col-sm-12">
+					<h4 class="foodname"><b>أرز</b></h4>
+					<h4 class="small"><i><span class="notes-text"></span></i></h4>
+				</div>
+				<div class="bottom-buttons col-sm-12">
+					<div class="row">
+						<div class="col-sm-4">
+							<button class="btn plus" onclick="plus(this)">+</button>
+						</div>
+						<div class="col-sm-4">
+							<button class="btn lightbox-show" onclick="showlightbox(this)">ملاحظات</button>
+						</div>
+						<div class="col-sm-4">
+							<button class="btn minus" onclick="minus(this)">-</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+function plus(x){
+	var no=parseInt($(x).closest(".foodkind").find(".top-pic-quantity").text()),
+		notes=$(x).closest(".foodkind").find(".lightbox-show"),
+		quantity=$(x).closest(".foodkind").find(".top-pic-quantity"),
+		minusbtn=$(x).closest(".foodkind").find(".minus");
+
+	no++;
+	notes.css({"visibility":"visible"});
+	quantity.css({"visibility":"visible"});
+	minusbtn.css({"visibility":"visible"});
+	quantity.text(no);
+}
+function minus(x){
+	var no=parseInt($(x).closest(".foodkind").find(".top-pic-quantity").text()),
+		notes=$(x).closest(".foodkind").find(".lightbox-show"),
+		quantity=$(x).closest(".foodkind").find(".top-pic-quantity"),
+		minusbtn=$(x).closest(".foodkind").find(".minus");
+
+	no--;
+	if(no==0)
+	{
+		notes.css({"visibility":"hidden"});
+		quantity.css({"visibility":"hidden"});
+		minusbtn.css({"visibility":"hidden"});
+	}
+	quantity.text(no);
+}
+function changenotes(x){
+	if(x.value.trim()!="")
+		$(x).closest(".foodkind").find(".notes-text").text(" ("+x.value+") ");
+	else
+		$(x).closest(".foodkind").find(".notes-text").text("");
+}
+function hidelightbox(x)
+{
+	$(x).closest(".note-lightbox").css({"visibility":"hidden"});
+}
+function showlightbox(x)
+{
+	$(x).closest(".foodkind").find(".note-lightbox").css({"visibility":"visible"});
+}
+</script>
+</body>
+</html>

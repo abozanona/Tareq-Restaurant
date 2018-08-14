@@ -1,0 +1,60 @@
+.vv {
+background: url(../img/1.jpg) rgba(0,0,0,0.85)  ;
+height: 145px;
+}
+.menu-food.pm-isotope-filter-container{
+	width: 100%;
+    min-height: 72px;
+    background-color: #efefef;
+
+
+}
+.pm-isotope-filter-system{
+	list-style: none;
+    display: flex;
+	float: right;    
+}
+ul, ol{
+	text-decoration: none;
+}
+a.current{
+	height: 100%;
+	margin-top: 21px;
+    padding-left: 19px;
+	margin-right: 10px;
+	color: #D2D2D2;
+    text-decoration: none;
+ 	float: left;
+ 	 text-align: center !important;
+}
+.current:hover{
+	color: #EF8D7B;
+	line-height: 70px;
+	height: 70px;
+	padding-top: 0;
+	
+    border-top: solid #ff0000;
+}
+.pm-column-spacing{
+	padding-bottom: 30px;
+}
+.aa{
+	margin-top: 15px;
+	padding-top: 10px;
+}
+img{
+	float: right;
+	margin-top: 10px;
+}
+.er{
+	margin-top: 6px;
+	text-align: right;
+}
+.cc{
+	    float: right;
+}
+.btn{
+	float: left;
+	margin-left: 10px;
+
+}
